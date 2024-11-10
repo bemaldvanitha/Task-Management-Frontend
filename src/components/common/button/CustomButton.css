@@ -1,0 +1,24 @@
+.custom-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+    border: 1px solid;
+    margin: 0 10px;
+}
+
+.custom-button-container-large{
+    width: 300px;
+}
+
+.custom-button-container-small {
+    width: 250px;
+}
+
+.custom-button-text {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
