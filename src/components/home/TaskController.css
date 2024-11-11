@@ -1,0 +1,37 @@
+.task-controller {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.task-controller-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.search-sort-col {
+    flex: 1;
+    max-width: 300px;
+}
+
+.apply-button {
+    background-color: #6473b7;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 30px;
+}
+
+.apply-button:hover {
+    background-color: #6473b7;
+}
+
+@media (max-width: 768px) {
+    .task-controller-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}

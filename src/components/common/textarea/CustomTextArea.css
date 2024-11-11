@@ -1,4 +1,4 @@
-.custom-input-container {
+.custom-text-area-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -7,20 +7,15 @@
     margin: 15px 0;
 }
 
-.custom-small-input-container {
-    width: 200px;
-    margin: 10px 0;
-}
-
-.custom-input-label {
+.custom-text-area-label {
     font-family: 'Montserrat', serif;
     font-weight: bold;
     font-size: 20px;
     margin: 10px 0;
-    color: white;
+    color: #f0f0f0;
 }
 
-.custom-input {
+.custom-text-area {
     font-family: 'Montserrat', serif;
     padding: 12px;
     border-radius: 12px;
@@ -30,13 +25,7 @@
     width: 100%;
 }
 
-.custom-small-input {
-    padding: 8px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-.custom-input-error {
+.custom-text-area-error {
     font-family: 'Montserrat', serif;
     font-weight: bold;
     font-size: 14px;
@@ -44,7 +33,7 @@
 }
 
 @media (max-width: 1000px) {
-    .custom-input-container {
+    .custom-text-area-container {
         width: 80%;
     }
 }

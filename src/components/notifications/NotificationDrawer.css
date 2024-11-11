@@ -1,0 +1,22 @@
+.custom-drawer .ant-drawer-content {
+    background-color: #353935 !important;
+}
+
+.custom-drawer .ant-drawer-header {
+    background-color: #353935 !important;
+    color: white;
+}
+
+.custom-drawer .ant-drawer-body {
+    background-color: #353935 !important;
+    color: white;
+}
+
+.custom-drawer-text {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #f0f0f0;
+}

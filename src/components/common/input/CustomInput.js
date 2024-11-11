@@ -2,14 +2,15 @@ import React from 'react';
 
 import './CustomInput.css';
 
-const CustomInput = ({ id, isError, errorMessage, title, value, onChangeHandle, placeholder, type }) => {
+const CustomInput = ({ id, isError, errorMessage, title, value, onChangeHandle, placeholder, type,
+                         isSmall = false, isNoLabel = false }) => {
     return(
-        <div className={'custom-input-container'}>
-            <label className={'custom-input-label'}>
+        <div className={`custom-input-container ${isSmall && 'custom-small-input-container'}`}>
+            {!isNoLabel && <label className={'custom-input-label'}>
                 {title}
-            </label>
+            </label>}
             <input id={id} value={value} onChange={onChangeHandle} placeholder={placeholder} type={type}
-                   className={'custom-input'}/>
+                   className={`custom-input ${isSmall && 'custom-small-input'}`}/>
             {isError && <p className={'custom-input-error'}>{errorMessage}</p>}
         </div>
     )

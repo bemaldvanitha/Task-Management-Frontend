@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { ColorRing } from 'react-loader-spinner';
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import CustomInput from "../../components/common/input/CustomInput";
 import CustomButton from "../../components/common/button/CustomButton";
+import LoadingSpinner from "../../components/common/loading/LoadingSpinner";
+import { useSignupMutation } from "../../slicers/authApiSlice";
 
 import './SignupScreen.css';
 
@@ -23,6 +24,8 @@ const SignupScreen = () => {
         isPasswordError: false,
         isUserNameError: false
     });
+
+    const [signup, { isLoading: signupIsLoading }] = useSignupMutation();
 
     const handleChange = (field, value) => {
         setFormData((prevData) => ({
@@ -62,9 +65,24 @@ const SignupScreen = () => {
 
         if(emailValidity && passwordValidity && userNameValidity){
             try{
+                const body = {
+                    email: formData.email,
+                    password: formData.password,
+                    username: formData.userName,
+                    type: "User"
+                }
 
+                const res = await signup(body).unwrap();
+                message.success(res?.message || 'Signup successfully !');
+
+                await localStorage.setItem('token', res?.shortJwtToken);
+                await localStorage.setItem('refreshToken', res?.longJwtToken);
+                await localStorage.setItem('type', res?.type);
+
+                navigate('/');
             }catch (err){
-
+                console.log(err);
+                message.error(err?.data?.message  || 'Authentication error !');
             }
         }else {
             setFieldError({
@@ -79,12 +97,9 @@ const SignupScreen = () => {
         navigate('/login');
     }
 
-    if(false){
+    if(signupIsLoading){
         return (
-            <div className={'loading-container'}>
-                <ColorRing visible={true} height="80" width="80" ariaLabel="color-ring-loading" wrapperStyle={{}}
-                           wrapperClass="color-ring-wrapper" colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}/>
-            </div>
+            <LoadingSpinner/>
         )
     }else {
         return(

@@ -1,0 +1,111 @@
+.admin-screen {
+    background-image: url("/src/assets/images/background/drivers/drivers-background-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-screen-container {
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin-screen-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+/* Flexbox container for stats */
+.admin-stats-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-box {
+    background-color: #353935;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.stat-box-title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+
+.stat-box-desc  {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+.chart-container {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .admin-stats-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chart-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .chart-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-stats-summary .stat-box {
+        padding: 15px; /* Reduce padding on small screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller font size for small screens */
+    }
+}
+
+/* Responsive chart layout for small screens */
+@media (max-width: 480px) {
+    .chart-container {
+        margin-bottom: 20px; /* More spacing between charts */
+    }
+
+    .stat-box h3 {
+        font-size: 1rem; /* Smaller font size for stat box title */
+    }
+
+    .stat-box p {
+        font-size: 1.2rem; /* Smaller font size for stat box value */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Further reduce title font size for very small screens */
+    }
+}
+
+/* Additional Styling for the Admin Screen */
+.admin-screen-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+

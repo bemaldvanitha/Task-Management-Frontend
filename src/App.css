@@ -1,0 +1,41 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.custom-model .ant-modal-content {
+    background-color: black;
+    color: white;
+    border: 1px solid #f0f0f0;
+}
+
+.custom-model .ant-modal-header {
+    background-color: black;
+    border-bottom: none;
+}
+
+.custom-model .ant-modal-title {
+    color: white;
+}
+
+.custom-model .ant-modal-body {
+    background-color: black;
+}
+
+.custom-model .ant-modal-footer {
+    background-color: black;
+    border-top: none;
+}
+
+.custom-model-ok-button {
+    background-color: #6473b7;
+    border-color: #6473b7;
+}
+
+.custom-ok-button:hover,
+.custom-ok-button:focus {
+    background-color: #5563a3;
+    border-color: #5563a3;
+}

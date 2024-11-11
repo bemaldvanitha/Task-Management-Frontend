@@ -1,0 +1,60 @@
+.home-screen {
+    background-image: url("/src/assets/images/background/fuel/fuel-screen-background-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-screen-container {
+    margin: 20px 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 10px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+}
+
+.home-screen-placeholder-text {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #f0f0f0;
+}
+
+.home-screen-title {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 34px;
+    margin: 10px 0;
+    color: #f0f0f0;
+}
+
+.home-screen-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@media (max-width: 1000px) {
+    .home-screen-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-screen-no-content {
+        display: none;
+    }
+}

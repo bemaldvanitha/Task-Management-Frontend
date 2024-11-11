@@ -3,19 +3,12 @@
 }
 
 .main-content {
-    margin-left: 100px;
-    padding: 20px;
+    margin-top: 65px;
     width: 100%;
 }
 
 @media (max-width: 1000px) {
     .main-content {
-        margin-left: 100px;
-    }
-}
-
-@media (max-height: 700px) {
-    .main-content {
-        padding: 10px;
+        margin-top: 65px;
     }
 }

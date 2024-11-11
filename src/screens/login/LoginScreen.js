@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { ColorRing } from 'react-loader-spinner';
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import CustomInput from "../../components/common/input/CustomInput";
 import CustomButton from "../../components/common/button/CustomButton";
+import LoadingSpinner from "../../components/common/loading/LoadingSpinner";
+import { useLoginMutation } from "../../slicers/authApiSlice";
 
 import './LoginScreen.css';
 
@@ -20,6 +21,8 @@ const LoginScreen = () => {
         isEmailError: false,
         isPasswordError: false
     });
+
+    const [login, { isLoading: loginIsLoading }] = useLoginMutation();
 
     const handleChange = (field, value) => {
         setFormData((prevData) => ({
@@ -48,9 +51,22 @@ const LoginScreen = () => {
 
         if(emailValidity && passwordValidity){
             try{
+                const body = {
+                    email: formData.email,
+                    password: formData.password
+                }
 
+                const res = await login(body).unwrap();
+                message.success(res?.message || 'Login successfully !');
+
+                await localStorage.setItem('token', res?.shortJwtToken);
+                await localStorage.setItem('refreshToken', res?.longJwtToken);
+                await localStorage.setItem('type', res?.type);
+
+                navigate('/');
             }catch (err){
-
+                console.log(err);
+                message.error(err?.data?.message  || 'Authentication error !');
             }
         }else {
             setFieldError({
@@ -64,12 +80,9 @@ const LoginScreen = () => {
         navigate('/signup');
     }
 
-    if(false){
+    if(loginIsLoading){
         return (
-            <div className={'loading-container'}>
-                <ColorRing visible={true} height="80" width="80" ariaLabel="color-ring-loading" wrapperStyle={{}}
-                           wrapperClass="color-ring-wrapper" colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}/>
-            </div>
+            <LoadingSpinner/>
         )
     }else {
         return(

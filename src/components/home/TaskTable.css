@@ -1,0 +1,59 @@
+.task-table {
+    width: 100%;
+    margin: 5px 20px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.task-table-header {
+    font-family: 'Montserrat', serif;
+    font-weight: bold;
+    font-size: 26px;
+    margin: 10px 0;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+.task-table-header-header-row th{
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.task-table-data {
+    font-family: 'Montserrat', serif;
+    font-size: 16px;
+    padding: 15px 0;
+    color: #f0f0f0;
+}
+
+.task-table-row td{
+    margin: 15px 0!important;
+}
+
+.task-table-icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.task-table-icon {
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+}
+
+.task-table-icon:hover {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.task-table-edit-icon {
+    color: #FFD700;
+}
+
+.task-table-delete-icon {
+    color: #ef5597;
+}
+
+.task-table-info-icon {
+    color: #00b8f1;
+}

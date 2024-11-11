@@ -1,0 +1,68 @@
+.custom-model .ant-modal-content {
+    font-family: 'Montserrat', serif;
+    color: #f0f0f0;
+    padding: 20px;
+}
+
+.task-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.task-detail-item {
+    font-size: 14px;
+}
+
+.task-detail-item strong {
+    color: #f0f0f0;
+}
+
+.task-detail-item span {
+    font-weight: normal;
+    color: #f0f0f0;
+}
+
+.ant-tag {
+    font-size: 14px;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #f0f0f0;
+}
+
+.audit-logs {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.audit-log-item {
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.audit-log-item strong {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+.audit-details {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.audit-detail {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.audit-detail strong {
+    font-weight: bold;
+    color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .task-details {
+        grid-template-columns: 1fr;
+    }
+}
