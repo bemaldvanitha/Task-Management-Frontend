@@ -113,7 +113,7 @@ const SignupScreen = () => {
                     <CustomInput type={'password'} value={formData.password} placeholder={'Enter Password'}
                                  onChangeHandle={passwordChangeHandler} errorMessage={'Enter Valid Password (password must be more that 5 chars)'}
                                  isError={fieldError.isPasswordError} id={'password'} title={'Enter Password'}/>
-                    <CustomInput type={'confirmPassword'} value={formData.confirmPassword} placeholder={'Enter Confirm Password'}
+                    <CustomInput type={'password'} value={formData.confirmPassword} placeholder={'Enter Confirm Password'}
                                  onChangeHandle={confirmPasswordChangeHandler} errorMessage={'Enter Valid Password (password must be more that 5 chars)'}
                                  isError={fieldError.isPasswordError} id={'confirmPassword'} title={'Enter Confirm Password'}/>
                     <CustomInput type={'text'} value={formData.userName} id={'userName'} title={'Enter User Name'}
